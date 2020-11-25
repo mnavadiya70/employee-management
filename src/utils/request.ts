@@ -6,9 +6,7 @@ const service = axios.create({
 });
 
 service.interceptors.response.use(
-    
     response => {
-        debugger;
         return response;
     },
     error => {
