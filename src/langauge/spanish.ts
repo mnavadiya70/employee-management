@@ -6,7 +6,8 @@ export default {
         firstName: 'Nombre de pila',
         lastName: 'Apellido',
         email: 'Correo electrónico',
-        search: 'Buscar'
+        search: 'Buscar',
+        addEmployee: 'Agregar empleada'
     },
     pagination: {
         next: 'Próxima',
@@ -16,8 +17,11 @@ export default {
     },
     modal: {
         title: 'Agregar miembros del equipo',
+        para: 'Seleccionar miembros del equipo para agregar',
         noTeamMemberFound: 'No se encontraron miembros del equipo.',
-        close: 'Cerrar'
+        close: 'Cerrar',
+        newEmp: 'Agregar nueva empleada',
+        updateEmp: 'Actualizar los detalles del empleado'
     },
     form: {
         cancel: 'Cancelar',

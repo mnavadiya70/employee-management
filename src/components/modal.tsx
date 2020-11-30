@@ -3,63 +3,71 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { withTranslation } from "react-i18next";
-import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
-
-import 'bootstrap/dist/css/bootstrap.css';
-// import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import {Table} from 'react-bootstrap'
 
 import '../langauge/configuration';
-// import '../assets/styles/main.css';
+
 const modal = (props) => {
-    // function onSelectColumns (selectedList, selectedItem){
-        
-    //     console.log(selectedItem);
-    //     console.log(selectedList);
-    // }
-
-    // function onRemoveColumns(selectedList, removedItem) {
-    //     console.log(selectedList);
-    //     console.log(removedItem);
-    // }
-
-    const {t} = props;
+    const { t } = props;
     return (
         <Modal
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
-            centered
-            className="modal">
+            centered>
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
                     {t("modal.title")}
-                    </Modal.Title>
-            </Modal.Header>
-            <Multiselect
-                    options={props.noTeamMembers} // Options to display in the dropdown
-                    // selectedValues={this.state.selectedColumns} // Preselected value to persist in dropdown
-                    onSelect={props.onSelectColumns} // Function will trigger on select event
-                    onRemove={props.onRemoveColumns} // Function will trigger on remove event
-                    displayValue="UserName" // Property name to display in the dropdown options
-                />
-                {/* {
-                    props.noTeamMembers.map(emp => {
-                        return <p>{emp}</p>
-                    })
-                } */}
-            <Modal.Body >
+                </Modal.Title>
+            </Modal.Header><br />
+
+            <Modal.Body>
+                <div className="row">
+                    <p>{t("modal.para")}</p>
+                    <Multiselect
+                        options={props.noTeamMembers}
+                        onSelect={props.onSelectColumns}
+                        onRemove={props.onRemoveColumns}
+                        displayValue="UserName"
+                    />
+                </div>
+                <br/>
                 {
                     props.members.length > 0
                         ?
-                        <BootstrapTable data={props.members}>
-                            <TableHeaderColumn dataField='TableId' isKey={true} dataSort={true} hidden={true}>{t("table.key")}</TableHeaderColumn>
-                            <TableHeaderColumn dataField='UserName' dataSort={true}>{t("table.userName")}</TableHeaderColumn>
-                            <TableHeaderColumn dataField='FirstName' dataSort={true}>{t("table.firstName")}</TableHeaderColumn>
-                            <TableHeaderColumn dataField='LastName' dataSort={true}>{t("table.lastName")}</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Email' dataSort={true}>{t("table.email")}</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Password' dataSort={true}>{t("table.password")}</TableHeaderColumn>
-                        </BootstrapTable>
-                        : t("modal.noTeamMemberFound")
+                        <div className="container">
+                            <div className="row">
+                                <Table responsive striped bordered hover>
+                                    <thead className="thead-light">
+                                        <tr style={{fontWeight: "bold"}}>
+                                            <td hidden={true}>{t("table.key")}</td>
+                                            <td>{t("table.userName")}</td>
+                                            <td >{t("table.firstName")}</td>
+                                            <td>{t("table.lastName")}</td>
+                                            <td>{t("table.email")}</td>
+                                            <td>{t("table.password")}</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            props.members.map(member => {
+                                                return (
+                                                    <tr key={member.key}>
+                                                        <td hidden={true}>{member.Key}</td>
+                                                        <td>{member.UserName}</td>
+                                                        <td>{member.FirstName}</td>
+                                                        <td>{member.LastName}</td>
+                                                        <td>{member.Email}</td>
+                                                        <td>{member.Password}</td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </Table>
+                            </div>
+                        </div>
+                        : <div className="row">{t("modal.noTeamMemberFound")}</div>
                 }
             </Modal.Body>
             <Modal.Footer>

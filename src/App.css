@@ -39,9 +39,6 @@
   }
 }
 
-.react-bs-table-container{
-  box-sizing: unset;
-}
-.react-bs-table-tool-bar {
-  width: max-content;
+.App{
+  width: 100%;
 }

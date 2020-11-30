@@ -6,7 +6,8 @@ export default {
         firstName: 'FirstName',
         lastName: 'LastName',
         email: 'Email',
-        search: 'Search'
+        search: 'Search',
+        addEmployee: 'Add Employee'
     },
     pagination: {
         next: 'Next',
@@ -16,8 +17,11 @@ export default {
     },
     modal: {
         title: 'Add Team members',
+        para: 'Select team members to add',
         noTeamMemberFound: 'No Team members found.',
-        close: 'Close'
+        close: 'Close',
+        newEmp: 'Add New Employee',
+        updateEmp: 'Update Employee details'
     },
     form: {
         cancel: 'Cancel',

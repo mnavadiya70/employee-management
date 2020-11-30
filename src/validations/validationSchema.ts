@@ -1,4 +1,3 @@
-import React from 'react';
 import * as Yup from 'yup';
 
 const validation = Yup.object().shape({
