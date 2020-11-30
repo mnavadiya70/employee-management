@@ -1,11 +1,12 @@
-import { ITeamMember } from './../api/types';
 import { IEmployee } from "../api/types";
 
 export interface IEmployeeState {
     employees: IEmployee[];
-    teamMembers: ITeamMember[];
+    teamMembers: IEmployee[];
     selectedEmployee: IEmployee;
     key: any;
     path: any;
     showModel: boolean;
+    selectedData: any;
+    notTeamMembers: any;
 }

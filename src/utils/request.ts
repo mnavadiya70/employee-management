@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { env } from '../environments/environment';
 
 const service = axios.create({
-    baseURL: 'https://employee-management-8ebb3.firebaseio.com/',
+    baseURL: env.BASE_API,//'https://employee-management-8ebb3.firebaseio.com/',
     timeout: 5000
 });
 
