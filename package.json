@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/data-grid": "^4.0.0-alpha.10",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
@@ -14,6 +18,7 @@
     "bootstrap": "^4.5.3",
     "formik": "^2.2.5",
     "i18next": "^19.8.4",
+    "material-table": "^1.69.2",
     "multiselect-react-dropdown": "^1.6.1",
     "react": "^17.0.1",
     "react-axios": "^2.0.3",
