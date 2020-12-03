@@ -94,8 +94,7 @@ const modal = (props) => {
                                     <Grid item xs={3}></Grid>
                                     <Grid item xs={12}>
                                         <Card>
-                                            <CardHeader color="primary">
-                                                <h4>Team members</h4>
+                                            <CardHeader>
                                             </CardHeader>
                                             <CardBody>
                                                 <MaterialTable
