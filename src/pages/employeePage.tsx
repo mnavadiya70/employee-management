@@ -168,6 +168,13 @@ class EmployeePage extends Component<IEmployeeProps, IEmployeeState> {
                     options={options}
                     searchPlaceholder={t("table.search")}
                     ref='table'
+                    version='4'
+                    tableHeaderClass='my-header-class'
+                    tableBodyClass='my-body-class'
+                    containerClass='my-container-class'
+                    tableContainerClass='my-table-container-class'
+                    headerContainerClass='my-header-container-class'
+                    bodyContainerClass='my-body-container-class'
                 >
                     <TableHeaderColumn dataField='Key' isKey={true} dataSort={true} hidden={true}>{t("table.key")}</TableHeaderColumn>
                     <TableHeaderColumn dataField='UserName' dataSort={true} >{t("table.userName")}</TableHeaderColumn>
