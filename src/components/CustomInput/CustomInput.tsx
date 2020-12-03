@@ -9,7 +9,7 @@ import Input from '@material-ui/core/Input';
 import Clear from '@material-ui/icons/Clear';
 import Check from '@material-ui/icons/Check';
 // core components
-import customInputStyle from '../../assets/customInputStyle';
+import customInputStyle from '../../assets/jss/material-dashboard-react/components/customInputStyle';
 
 function CustomInput({ ...props }: any) {
   const {

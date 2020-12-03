@@ -94,7 +94,7 @@ class EmployeePage extends Component<IEmployeeProps, IEmployeeState> {
                     onClick={() => this.GetTeamMembers(row.Key)}>
                     <FaEye />
                 </ReactStrap.Button>{" "}
-                <Link className="btn btn-warning" to={`/edit/${row.Key}`}><FaPencilAlt /></Link>{" "}
+                <Link className="btn btn-warning" to={`/admin/edit/${row.Key}`}><FaPencilAlt /></Link>{" "}
                 <ReactStrap.Button className="btn btn-danger"
                     onClick={() => this.DeleteEmployee(cell, row, rowIndex)}>
                     <FaTrash />
@@ -175,7 +175,7 @@ class EmployeePage extends Component<IEmployeeProps, IEmployeeState> {
                     <TableHeaderColumn dataField='LastName' dataSort={true}>{t("table.lastName")}</TableHeaderColumn>
                     <TableHeaderColumn dataField='Email' dataSort={true}>{t("table.email")}</TableHeaderColumn>
                     <TableHeaderColumn dataField='Password' dataSort={true}>{t("table.password")}</TableHeaderColumn>
-                    <TableHeaderColumn dataFormat={this.buttons.bind(this)}><Link className="btn btn-success" to="/create">{t("table.addEmployee")}</Link></TableHeaderColumn>
+                    <TableHeaderColumn dataFormat={this.buttons.bind(this)}><Link className="btn btn-success" to="/admin/create">{t("table.addEmployee")}</Link></TableHeaderColumn>
                 </BootstrapTable>
                 <Modal
                     noTeamMembers={this.state.notTeamMembers}

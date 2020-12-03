@@ -10,18 +10,18 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
+import { withTranslation } from "react-i18next";
 // core components
 import AdminNavbarLinks from '../Navbars/AdminNavbarLinks';
-import RTLNavbarLinks from '../Navbars/RTLNavbarLinks';
 
-import sidebarStyle from '../../assets/sidebarStyle';
+import sidebarStyle from '../../assets/jss/material-dashboard-react/components/sidebarStyle';
 
 const Sidebar = ({ ...props }) => {
   // verifies if routeName is the one active (in browser input)
   function activeRoute(routeName: any) {
     return props.location.pathname.indexOf(routeName) > -1 ? true : false;
   }
-  const { classes, color, logo, image, logoText, routes } = props;
+  const { classes, color, logo, image, logoText, routes, t } = props;
   var links = (
     <List className={classes.list}>
       {routes.map((prop: any, key: any) => {
@@ -64,9 +64,7 @@ const Sidebar = ({ ...props }) => {
                 />
               )}
               <ListItemText
-                primary={
-                  props.rtlActive ? prop.rtlName : prop.name
-                }
+                primary={t(prop.name)}
                 className={classNames(classes.itemText, whiteFontClasses, {
                   [classes.itemTextRTL]: props.rtlActive
                 })}
@@ -112,7 +110,7 @@ const Sidebar = ({ ...props }) => {
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+            <AdminNavbarLinks />
             {links}
           </div>
           {image !== undefined ? (
@@ -152,4 +150,4 @@ const Sidebar = ({ ...props }) => {
 //   classes: PropTypes.object.isRequired
 // };
 
-export default withStyles(sidebarStyle)(Sidebar);
+export default withStyles(sidebarStyle)(withTranslation()(Sidebar));

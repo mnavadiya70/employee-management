@@ -11,22 +11,21 @@ import Hidden from '@material-ui/core/Hidden';
 import Menu from '@material-ui/icons/Menu';
 // core components
 import AdminNavbarLinks from './AdminNavbarLinks';
-import RTLNavbarLinks from './RTLNavbarLinks';
 import Button from '../CustomButtons/Button';
 
-import headerStyle from '../../assets/headerStyle';
+import headerStyle from '../../assets/jss/material-dashboard-react/components/headerStyle';
 
 function Header({ ...props }: any) {
-  function makeBrand() {
-    var name;
-    props.routes.map((prop: any, key: any) => {
-      if (prop.layout + prop.path === props.location.pathname) {
-        name = props.rtlActive ? prop.rtlName : prop.name;
-      }
-      return null;
-    });
-    return name;
-  }
+  // function makeBrand() {
+  //   var name;
+  //   props.routes.map((prop: any, key: any) => {
+  //     if (prop.layout + prop.path === props.location.pathname) {
+  //       name = props.rtlActive ? prop.rtlName : prop.name;
+  //     }
+  //     return null;
+  //   });
+  //   return name;
+  // }
   const { classes, color } = props;
   const appBarClasses = classNames({
     [' ' + classes[color]]: color
@@ -35,13 +34,12 @@ function Header({ ...props }: any) {
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
-          {/* Here we create navbar brand, based on route name */}
           <Button color="transparent" href="#" className={classes.title}>
-            {makeBrand()}
+            {/* {makeBrand()} */}
           </Button>
         </div>
         <Hidden smDown={true} implementation="css">
-          {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+          <AdminNavbarLinks />
         </Hidden>
         <Hidden mdUp={true} implementation="css">
           <IconButton

@@ -2,7 +2,7 @@ import React from 'react';
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 // core components
-import typographyStyle from '../../assets/typographyStyle';
+import typographyStyle from '../../assets/jss/material-dashboard-react/components/typographyStyle';
 
 function Danger({ ...props }: any) {
   const { classes, children } = props;

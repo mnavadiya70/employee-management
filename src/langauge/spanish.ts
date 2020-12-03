@@ -30,11 +30,18 @@ export default {
     validation: {
         isRequired: ' es requerido',
         passwordValidation: 'La contraseña debe tener al menos 6 caracteres',
-        recordSaved: 'Miembro del equipo agregado correctamente.'
+        recordSaved: 'Miembro del equipo agregado correctamente.',
+        validEmail: 'Por favor introduzca un correo electrónico válido',
+        passwordLength: 'La longitud de la contraseña debe tener al menos 8 caracteres'
     },
     page: {
         getExportData: 'Obtener datos seleccionados',
         exportData: 'Exportar datos seleccionados a csv',
-
+    },
+    Dashboard: 'Tablero',
+    Employees: 'Empleadas',
+    CreativeTim: 'Tim creativo',
+    dashboard: {
+        EmployeeManagement: 'Gestión de empleados',
     }
 }

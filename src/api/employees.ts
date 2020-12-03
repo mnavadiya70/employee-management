@@ -31,26 +31,6 @@ export const employees = () =>
         });
     })
 
-export const getTeamMembers = () =>
-    request({
-        url: '/TeamMembers.json',
-        method: 'get'
-    }).then(response => {
-        const employees = Object.keys(response.data)
-        return employees.map(key => {
-            const member = response.data[key]
-            return {
-                TeamId: member.TeamId,
-                FirstName: member.FirstName,
-                UserName: member.UserName,
-                Email: member.Email,
-                Password: member.Password,
-                LastName: member.LastName
-            }
-        });
-    });
-
-
 export const getEmployee = (key: any) => 
     request({
         url: '/employees/' + key + '.json',

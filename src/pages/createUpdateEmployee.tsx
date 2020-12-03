@@ -69,11 +69,11 @@ class SaveEmployee extends Component<IEmployeeProps, IEmployeeState>{
                     const emp = JSON.stringify(employee);
                     if (this.state.path === "/edit/:key") {
                         EditEmployee(this.state.key, emp);
-                        this.props.history.push("/");
+                        this.props.history.push("/admin/dashboard");
                     }
                     else {
                         AddEmployee(emp);
-                        this.props.history.push("/");
+                        this.props.history.push("/admin/dashboard");
                     }
                 }}
                 render={({ errors, status, touched }) => (
@@ -107,7 +107,7 @@ class SaveEmployee extends Component<IEmployeeProps, IEmployeeState>{
                             </div>
                             <div className="form-group">
                                 <button type="submit" className="btnSave">{t("form.save")}</button>{"   "}
-                                <Link to="/" className="btnCancel">{t("form.cancel")}</Link>
+                                <Link to="/admin/dashboard" className="btnCancel">{t("form.cancel")}</Link>
                             </div>
                         </Form>
                     </div>
